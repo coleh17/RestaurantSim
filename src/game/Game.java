@@ -20,7 +20,7 @@ public class Game extends Canvas implements Runnable {
 	private Stats stats;
 
 	public Game() throws InterruptedException {
-		new Window(WIDTH, HEIGHT, "RestaurantSim", this);
+		new TestWindow(WIDTH, HEIGHT, "RestaurantSim", this);
 		
 		handler = new Handler();
 		r = new Random();
@@ -28,7 +28,6 @@ public class Game extends Canvas implements Runnable {
 		stats = new Stats(0);
 
 		while(running == true) {
-			System.out.println("hi");
 			handler.addObject(new Customer(50, 250, CustomerStates.IN_LINE, 0, handler, stats));
 			Thread.sleep(r.nextInt(3000) + 2000);
 		}

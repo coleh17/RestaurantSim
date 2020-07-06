@@ -8,12 +8,13 @@ public abstract class GameObject {
 	protected CustomerStates state;
 	protected int velX, velY;
 	
-	public GameObject(int x, int y) {
+	public GameObject(int x, int y, CustomerStates state) {
 		this.x = x;
 		this.y = y;
+		this.state = state;
 	}
 	
-	public abstract void tick(int lastX);
+	public abstract void tick(int lastX, CustomerStates lastState);
 	public abstract void render(Graphics g);
 	
 	public void setX(int x) {
@@ -44,6 +45,7 @@ public abstract class GameObject {
 		this.state = state;
 	}
 	public CustomerStates getState() {
+		System.out.println(" -- " + state);
 		return state;
 	}
 	
